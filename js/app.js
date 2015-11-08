@@ -17,6 +17,10 @@ var MAXPY = 380;
 var POFFSETX = 15;
 var POFFSETY = 60;
 
+// Start and end for bug
+var BUGEND = 505;
+var BUGSTART = -100;
+
 // Array of bug enemies
 var allEnemies = [];
 
@@ -41,10 +45,10 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x = this.x + this.speed * dt;
-    if (this.x % canvas.width === 0) {
-        this.x = 0; // return enemy to the left side
+    if (this.x >= BUGEND) {
+        this.x = BUGSTART; // return enemy to the left side
         var randomrow = generateRandom(3,0); //get a random number between 0 and 2
-        this.y = 65 + randomrow * YMOVE; //put enemy in random row
+        this.y = 60 + randomrow * YMOVE; //put enemy in random row
     }
 };
 
@@ -104,9 +108,17 @@ player.prototype.handleInput = function(keyDirection) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+var randomrow = generateRandom(3,0);//get a random number between 0 and 2
+y = 60 + randomrow * YMOVE;
+var enemy = new Enemy(-100,y,100)
+allEnemies.push(enemy);
 
 // Place player
 var player = new player(PSTARTX, PSTARTY);
+
+function generateRandom(x,y) {
+    return Math.floor(Math.random() *x + y);
+}
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
