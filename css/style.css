@@ -1,3 +1,26 @@
 body {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffc7c7;
+}
+
+
+canvas {
+	order: 1;
+	padding: 25px;
+	margin: auto;
+}
+
+
+.side-bar {
+	font-family: arial, sans-serif;
+	order: 2;
+	margin: auto;
+	max-width: 505px;
+}
+
+
+.player-img {
+	width: 50px;
+	height: 85px;
 }

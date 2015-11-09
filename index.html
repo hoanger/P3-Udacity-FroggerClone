@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Effective JavaScript: Frogger</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <script src="js/resources.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/engine.js"></script>
-</body>
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Effective JavaScript: Frogger</title>
+	    <link rel="stylesheet" href="css/style.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="side-bar">
+			<h2>Current score: <span id="score"></span></h2>
+			<h3>Your high score: <span id="highScore"></span></h3>
+			<br/>
+			<h3>Instructions for the game:</h3>
+			<p>Use the arrow keys to move the player to the river and score points, but watch out for bugs! Score resets if you get hit by a bug. Try to beat your high score!</p>
+			<p>Use number keys 1-5 to switch the look of your player.</p>
+			<div class="players">
+				<img class="player-img" src="images/char-boy.png" />
+	        	<img class="player-img" src="images/char-cat-girl.png" />
+	        	<img class="player-img" src="images/char-horn-girl.png" />
+	        	<img class="player-img" src="images/char-pink-girl.png" />
+	        	<img class="player-img" src="images/char-princess-girl.png" />
+			</div>
+		</div>
+
+	    <script src="js/resources.js"></script>
+	    <script src="js/app.js"></script>
+	    <script src="js/engine.js"></script>
+	</body>
 </html>

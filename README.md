@@ -1,6 +1,14 @@
-frontend-nanodegree-arcade-game
+P3 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+This is a clone of the popular Frogger game. To get points, player must move to the river
+without being hit by enemy bugs. Your score resets when the player and enemy collide. Use
+the arrow keys to move the player and the number keys 1-5 to change the look of the
+character.
 
-for self-checking their submission.
+Enjoy!
+
+
+Requirements:
+- Browser that supports HTML5, Javascript and jQuery.
+- Keyboard input for arrow keys and number keys 1-5
