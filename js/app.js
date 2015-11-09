@@ -1,4 +1,5 @@
 
+'use strict';
 /** Constants for the game */
 // Constant variables for movement control
 var XMOVE = 101;
@@ -41,6 +42,7 @@ var allEnemies = [];
 * @constructor
 */
 var Enemy = function() {
+    'use strict';
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -53,6 +55,7 @@ var Enemy = function() {
 * @param (number} dt - a time delta between ticks
 */
 Enemy.prototype.update = function(dt) {
+    'use strict';
     // Movement multiplied by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
@@ -76,18 +79,20 @@ Enemy.prototype.update = function(dt) {
 * @description Reset/initiate enemy position and speed
 */
 Enemy.prototype.reset = function() {
+    'use strict';
     this.x = ENEMYSTART; // return enemy to the left side
     // Put enemy in random paved row
     var randomrow = generateRandom(0,3);
     this.y = 45 + randomrow * YMOVE;
     // Set random speed for enemy
-    this.speed = generateRandom(2,9) * 50;
+    this.speed = generateRandom(2,6) * 50;
 };
 
 /**
 * @description Draw the enemy on the screen, required method for game
 */
 Enemy.prototype.render = function() {
+    'use strict';
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
@@ -96,6 +101,7 @@ Enemy.prototype.render = function() {
 * @constructor
 */
 var Player = function() {
+    'use strict';
     // The image/sprite for our player, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/char-boy.png';
@@ -106,12 +112,15 @@ var Player = function() {
 /**
 * @description Required in game engine. Intentionally empty
 */
-Player.prototype.update = function() {};
+Player.prototype.update = function() {
+    'use strict';
+};
 
 /**
 * @description Place player at start position and refresh score
 */
 Player.prototype.reset = function() {
+    'use strict';
     this.x = PSTARTX;
     this.y = PSTARTY;
     $("span#score").text(score.toString());
@@ -122,6 +131,7 @@ Player.prototype.reset = function() {
 * @description Draw the player on the screen, required method for game
 */
 Player.prototype.render = function() {
+    'use strict';
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
@@ -131,6 +141,7 @@ Player.prototype.render = function() {
 * one of five choices to change player character sprite
 */
 Player.prototype.handleInput = function(keyInput) {
+    'use strict';
     switch (keyInput) {
         // Move player left unless at left-most edge
         case 'left':
@@ -184,11 +195,13 @@ Player.prototype.handleInput = function(keyInput) {
 * @returns Random whole number between x and y
 */
 function generateRandom(x,y) {
+    'use strict';
     return Math.floor(Math.random() * y + x);
 }
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
+var i = 0;
 for (i = 0; i < MAXENEMIES; i++) {
     allEnemies.push(new Enemy());
 }
@@ -201,6 +214,7 @@ var player = new Player();
 * sends the keys to your Player.handleInput() method
 */
 document.addEventListener('keyup', function(e) {
+    'use strict';
     var allowedKeys = {
         37: 'left',
         38: 'up',

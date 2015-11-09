@@ -6,6 +6,8 @@ without being hit by enemy bugs. Your score resets when the player and enemy col
 the arrow keys to move the player and the number keys 1-5 to change the look of the
 character.
 
+To start the game open the file, "index.html" in your browser. Make sure the window is at least 600x700 px for best results.
+
 Enjoy!
 
 
