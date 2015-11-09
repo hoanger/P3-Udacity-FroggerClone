@@ -1,4 +1,12 @@
 
+/**
+* Author: Andy Nguyen
+* Date: November 9, 2015
+*
+* This program is to create all the behaviors for the player and enemies
+* in a "Frogger" style arcade game.
+*/
+
 'use strict';
 /** Constants for the game */
 // Constant variables for movement control
